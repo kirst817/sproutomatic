@@ -5,6 +5,7 @@
   <title>Sproutomatic</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Tamma|Londrina+Outline|Noto+Sans|Questrial|Raleway" rel="stylesheet">
     <script src="https://use.fontawesome.com/d52a03062a.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
     <script src="javascripts/app.js" charset="utf-8"></script>
@@ -14,63 +15,41 @@
 
 </head>
 <body>
-  <div class="container">
-    <div class="navbar-wrapper">
-    <!-- NAVBAR
-================================================== -->
-         <nav class="navbar navbar-inverse navbar-static-top">
-           <div class="container">
-             <div class="navbar-header">
-               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                 <span class="sr-only">Toggle navigation</span>
-                 <span class="icon-bar"></span>
-                 <span class="icon-bar"></span>
-                 <span class="icon-bar"></span>
-               </button>
-               <a class="navbar-brand" href="#">Project name</a>
-             </div>
-             <div id="navbar" class="navbar-collapse collapse">
-               <ul class="nav navbar-nav">
-                 <li class="active"><a href="#">Home</a></li>
-                 <li><a href="#about">About</a></li>
-                 <li><a href="#contact">Contact</a></li>
-                 <li class="dropdown">
-                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                   <ul class="dropdown-menu">
-                     <li><a href="#">Action</a></li>
-                     <li><a href="#">Another action</a></li>
-                     <li><a href="#">Something else here</a></li>
-                     <li role="separator" class="divider"></li>
-                     <li class="dropdown-header">Nav header</li>
-                     <li><a href="#">Separated link</a></li>
-                     <li><a href="#">One more separated link</a></li>
-                   </ul>
-                 </li>
-               </ul>
-             </div>
-           </div>
-         </nav>
 
-       </div>
-     </div>
+     <div id="main-nav-wrapper" class="container">
+    	<div class="inside">
+    		<nav>
+    			<div class="main-logo-wrapper">
+    				<a href="/" id="sproutomatic"><span class='glyphicon glyphicon-grain'></span>Sproutomatic</a>
+    			</div>
 
+    			<ul class="nav navbar-nav-right">
+    				<li><a href="/product">Our Product</a></li>
+    				<li><a href="/company">The Company</a></li>
+    				<li><a href="/weSolve">We Solve</a></li>
+    				<!-- <li><a href="/login" class="more">Login</a></li> -->
+    				<li class="signup"><a class="trial-trigger standard-trigger btn btn-default btn-sm" href="/signup">Try it Now!</a></li>
+    			</ul>
+    		</nav>
+    	</div>
+    </div>
      <!-- Carousel
          ================================================== -->
-     <div id="myCarousel" class="carousel slide" data-ride="carousel">
+     <!-- <div id="myCarousel" class="carousel slide" data-ride="carousel"> -->
      <!-- Indicators -->
-     <ol class="carousel-indicators">
+     <!-- <ol class="carousel-indicators">
        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
        <li data-target="#myCarousel" data-slide-to="1"></li>
        <li data-target="#myCarousel" data-slide-to="2"></li>
      </ol>
      <div class="carousel-inner" role="listbox">
        <div class="item active">
-         <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
+         <img class="first-slide" src="images/raindrops.jpg" alt="First slide">
          <div class="container">
            <div class="carousel-caption">
-             <h1>Example headline.</h1>
-             <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-             <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+             <h1>Save Time.</h1>
+             <p>Know when you need to water your plants. Get updates directly to your phone.</p>
+             <p><a class="btn btn-lg btn-primary" href="#" role="button">Try it Today</a></p>
            </div>
          </div>
        </div>
@@ -103,7 +82,28 @@
        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
        <span class="sr-only">Next</span>
      </a>
-   </div>
+   </div> -->
    <!-- /.carousel -->
+
+   <!-- hero -->
+   <div class="main-container">
+		<h1 class="title">Grow better. Faster.</h1>
+    <h2 class="subtitle">Have trouble keeping your garden alive? </h2>
+    <h2 class="hero-subtitle">Automate your garden and never have that problem again!</h2>
+			<p class="btn btn-default btn-lg"><a class="getstarted" href="/signup">Get Started! &mdash;</a></p>
+	</div>
+
+	<div class="overlay"></div>
+
+  <section class="container">
+	<div class="footer">
+		<ul>
+			<li class="twitter"><span>Twitter</span></li>
+			<li class="facebook"><span>Facebook</span></li>
+			<li class="adidas"><span>Instagram</span></li>
+		</ul>
+	</div>
+</section>
+
 </body>
 </html>

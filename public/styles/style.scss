@@ -1,0 +1,54 @@
+// font-family: 'Raleway', sans-serif;
+// font-family: 'Noto Sans', sans-serif;
+// font-family: 'Londrina Outline', cursive;
+// font-family: 'Questrial', sans-serif;
+
+
+
+#sproutomatic {
+  display: inline-block;
+  font-size: 30px;
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif;
+}
+ul {  float: right;
+  li {
+    display: inline-block;
+    float: left;
+    color: black;
+    font-family: 'Raleway', sans-serif;
+  }
+}
+.main-container {
+  text-align: center;
+  h1 {
+    font-family: 'Baloo Tamma', cursive;
+  }
+  h2 {
+  font-family: 'Londrina Outline', cursive;
+  color: limegreen;
+  }
+  .getstarted {
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+  }
+}
+
+.overlay {
+  background-color: lightgrey;
+}
+
+.footer {
+  background-color: lightgrey;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  font-family: 'Noto Sans', sans-serif;
+
+  div {
+    text-align: center;
+  }
+
+}

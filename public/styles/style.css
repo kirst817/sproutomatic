@@ -1,0 +1,40 @@
+#sproutomatic {
+  display: inline-block;
+  font-size: 30px;
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif; }
+
+ul {
+  float: right; }
+  ul li {
+    display: inline-block;
+    float: left;
+    color: black;
+    font-family: 'Raleway', sans-serif; }
+
+.main-container {
+  text-align: center; }
+  .main-container h1 {
+    font-family: 'Baloo Tamma', cursive; }
+  .main-container h2 {
+    font-family: 'Londrina Outline', cursive;
+    color: limegreen; }
+  .main-container .getstarted {
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif; }
+
+.overlay {
+  background-color: lightgrey; }
+
+.footer {
+  background-color: lightgrey;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  font-family: 'Noto Sans', sans-serif; }
+  .footer div {
+    text-align: center; }
+
+/*# sourceMappingURL=style.css.map */
