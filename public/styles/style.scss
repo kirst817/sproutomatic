@@ -42,13 +42,22 @@ ul {  float: right;
 
 .footer {
   background-color: lightgrey;
-  position: absolute;
+  // position: absolute;
+  position: relative;
   right: 0;
   bottom: 0;
   left: 0;
   padding: 1rem;
   font-family: 'Noto Sans', sans-serif;
   text-align: center;
+}
 
-
+//DASHBOARD
+#dashSideBar {
+  display: inline-block;
+  float: left;
+}
+#mainDash{
+  display: inline-block;
+  float: left;
 }
