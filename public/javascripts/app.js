@@ -1,1 +1,1 @@
-var app = angular.module('gardenApp', []); 
+var app = angular.module('gardenApp', ['ui.router']); 
