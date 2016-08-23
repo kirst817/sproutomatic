@@ -1,3 +1,6 @@
+body {
+  background-image: url(../public/images/potted-herbs.jpg); }
+
 #sproutomatic {
   display: inline-block;
   font-size: 30px;
