@@ -5,46 +5,43 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider
     .state('home', {
       url: '/',
-      templateUrl: 'views/main.html',
-      controller: 'MainCtrl'
+      templateUrl: 'views/main.html'
     })
     .state('product', {
       url: '/our-product',
-      templateUrl: 'views/our-product.html',
-      controller: 'ProductCtrl'
+      templateUrl: 'views/our-product.html'
+      // controller: 'ProductCtrl'
     })
     .state('company', {
       url: '/the-company',
-      templateUrl: 'views/the-company.html',
-      controller: 'CompanyCtrl',
+      templateUrl: 'views/the-company.html'
     })
     .state('solve', {
       url: '/we-solve',
-      templateUrl: 'views/we-solve.html',
-      controller: 'SolveCtrl',
+      templateUrl: '/views/we-solve.html'
     })
     .state('login', {
     url: '/login',
-    templateUrl: 'views/login.html',
-    controller: 'LoginCtrl',
+    templateUrl: 'views/login.html'
+    // controller: 'LoginCtrl',
     // resolve: { skipIfAuthenticated: skipIfAuthenticated }
     })
   .state('signup', {
     url: '/signup',
-    templateUrl: 'views/signup.html',
-    controller: 'SignupCtrl',
+    templateUrl: 'views/signup.html'
+    // controller: 'SignupCtrl',
     // resolve: { skipIfAuthenticated: skipIfAuthenticated }
     })
     .state('account', {
       url: '/account',
-      templateUrl: 'views/profile.html',
-      controller: 'ProfileCtrl',
+      templateUrl: 'views/profile.html'
+      // controller: 'ProfileCtrl',
       // resolve: { loginRequired: loginRequired }
     })
     .state('dashboard', {
       url: '/dashboard',
-      templateUrl: 'views/dashboard.html',
-      controller: 'DashboardCtrl',
+      templateUrl: 'views/dashboard.html'
+      // controller: 'DashboardCtrl',
       // resolve: { loginRequired: loginRequired }
     })
     $locationProvider.html5Mode(true);
