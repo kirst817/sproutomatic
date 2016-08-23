@@ -16,97 +16,11 @@
     <script src="views/main.html" charset="utf-8"></script>
 
 </head>
-<body>
+<body ng-controller='gardenCtrl'>
 
-     <div id="main-nav-wrapper" class="container">
-    	<div class="inside">
-    		<nav>
-    			<div class="main-logo-wrapper">
-    				<a href="/" id="sproutomatic"><span class='glyphicon glyphicon-grain'></span>Sproutomatic</a>
-    			</div>
-
-    			<ul class="nav navbar-nav-right">
-    				<li><a href="/product">Our Product</a></li>
-    				<li><a href="/company">The Company</a></li>
-    				<li><a href="/weSolve">We Solve</a></li>
-    				<!-- <li><a href="/login" class="more">Login</a></li> -->
-    				<li class="signup"><a class="trial-trigger standard-trigger btn btn-default btn-sm" href="/signup">Try it Now!</a></li>
-    			</ul>
-    		</nav>
-    	</div>
-    </div>
-     <!-- Carousel
-         ================================================== -->
-     <!-- <div id="myCarousel" class="carousel slide" data-ride="carousel"> -->
-     <!-- Indicators -->
-     <!-- <ol class="carousel-indicators">
-       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-       <li data-target="#myCarousel" data-slide-to="1"></li>
-       <li data-target="#myCarousel" data-slide-to="2"></li>
-     </ol>
-     <div class="carousel-inner" role="listbox">
-       <div class="item active">
-         <img class="first-slide" src="images/raindrops.jpg" alt="First slide">
-         <div class="container">
-           <div class="carousel-caption">
-             <h1>Save Time.</h1>
-             <p>Know when you need to water your plants. Get updates directly to your phone.</p>
-             <p><a class="btn btn-lg btn-primary" href="#" role="button">Try it Today</a></p>
-           </div>
-         </div>
-       </div>
-       <div class="item">
-         <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
-         <div class="container">
-           <div class="carousel-caption">
-             <h1>Another example headline.</h1>
-             <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-             <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
-           </div>
-         </div>
-       </div>
-       <div class="item">
-         <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
-         <div class="container">
-           <div class="carousel-caption">
-             <h1>One more for good measure.</h1>
-             <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-             <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
-           </div>
-         </div>
-       </div>
-     </div>
-     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-       <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-       <span class="sr-only">Previous</span>
-     </a>
-     <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-       <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-       <span class="sr-only">Next</span>
-     </a>
-   </div> -->
-   <!-- /.carousel -->
-
-   <!-- hero -->
-   <div class="main-container">
-		<h1 class="title">Grow better. Faster.</h1>
-    <h2 class="subtitle">Have trouble keeping your garden alive? </h2>
-    <h2 class="hero-subtitle">Automate your garden and never have that problem again!</h2>
-			<p class="btn btn-default btn-lg"><a class="getstarted" href="/signup">Get Started! &mdash;</a></p>
-	</div>
-
-	<div class="overlay"></div>
-
-  <section class="container">
-	<div class="footer">
-
-			<!-- <li class="twitter"><span>Twitter</span></li>
-			<li class="facebook"><span>Facebook</span></li>
-			<li class="adidas"><span>Instagram</span></li> -->
-
-     <span>Sproutomatic © 2016</span>
-	</div>
-</section>
+  <div ng-include src="'partials/header.html'"></div>
+  <div class="main-view-content" ui-view></div>
+  <div ng-include src="'partials/footer.html'"></div>
 
 </body>
 </html>
