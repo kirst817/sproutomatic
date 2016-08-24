@@ -44,7 +44,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
       // controller: 'DashboardCtrl',
       // resolve: { loginRequired: loginRequired }
     })
-    // $locationProvider.html5Mode(true);
+    $locationProvider.html5Mode(true);
 
 
     // $authProvider.loginUrl = '/login';
