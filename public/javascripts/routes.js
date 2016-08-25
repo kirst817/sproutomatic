@@ -28,8 +28,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     })
   .state('signup', {
     url: '/signup',
-    templateUrl: 'views/signup.html'
-    // controller: 'SignupCtrl',
+    template: '<pd-signup></pd-signup>'
     // resolve: { skipIfAuthenticated: skipIfAuthenticated }
     })
     .state('account', {
