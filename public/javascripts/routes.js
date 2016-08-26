@@ -23,7 +23,6 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('login', {
     url: '/login',
     template: '<pd-login></pd-login>'
-    // controller: 'LoginCtrl',
     // resolve: { skipIfAuthenticated: skipIfAuthenticated }
     })
   .state('signup', {
