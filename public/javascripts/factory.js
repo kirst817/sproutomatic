@@ -1,18 +1,20 @@
 app.factory('userFactory', userFactory);
 
+userFactory.$inject = ['$http', '$window', '$state'];
+
 function userFactory($http, $window, $state){
   var currentUser = null;
 
   var service = {
 
     attemptAuth
-    
+
   };
 
   return service;
 
   function attemptAuth(authType, user){
-    return $http.post('' + authType, {
+    return $http.post('/index/v1/users' + authType, {
       user:user
     })
     .then(function(response){
@@ -26,4 +28,7 @@ function userFactory($http, $window, $state){
     });
   }
 
+  function save(token) {
+          $window.localStorage['jwtToken'] = token;
+      }
 }

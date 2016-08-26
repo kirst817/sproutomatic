@@ -1,7 +1,7 @@
 
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('plants', function(table) {
-  table.increments('id').primary();
+  table.increments();
   table.string('plant').notNullable().unique();
   table.string('sun_exposure').notNullable();
   table.string('water_requirements').notNullable();

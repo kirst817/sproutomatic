@@ -12,8 +12,9 @@ function signupDirective(){
   }
 }
 
-//$inject???
-function controller($scope, $state){
+controller.$inject = ['userFactory', '$state', '$scope'];
+
+function controller(userFactory, $state, $scope){
   var signup = this;
   var authType = $state.current.url;
 

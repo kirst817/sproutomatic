@@ -1,9 +1,9 @@
 
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('userPlants', function(table) {
-  table.increments('id').primary();
-  table.string('user_id').references('users.id');
-  table.string('plant_id').references('plants.id');
+  table.increments().primary();
+  table.integer('user_id').unsigned().references('id').inTable('users');
+  table.integer('plant_id').unsigned().references('id').inTable('plants');
 })
 };
 
