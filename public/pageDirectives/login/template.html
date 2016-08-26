@@ -20,12 +20,12 @@
                     <h4> Or Login with <strong>Sproutomatic Account:</strong></h4>
                    <br />
 
-                   <form name="SignupForm" ng-submit="login.authorize()" novalidate>
+                   <form ng-submit="login.authorize()">
 
                     <label>Email: </label>
-                       <input name='email' type="email" class="form-control" placeholder="Email" ng-model="signup.user.email" required>
+                       <input type="email" class="form-control" placeholder="Email" ng-model="login.user.email" required>
                        <label>Password:  </label>
-                       <input name="password" type="password" class="form-control" placeholder="Password" ng-model="signup.user.password" minlength="3" maxlength="16" required>
+                       <input type="password" class="form-control" placeholder="Password" ng-model="login.user.password" required>
                        <hr/>
                        <button type="submit" class="btn btn-info"> &nbsp;Login</button>
                     </form>

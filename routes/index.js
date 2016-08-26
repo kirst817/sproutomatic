@@ -21,7 +21,7 @@ router.post('/users/signup', function(req, res, next) {
 
  //valid.register
 
-  // var user = req.body.user;
+  var user = req.body.user;
   // var username = user.username;
   var email = user.email;
   var password = bcrypt.hashSync(user.password, 10);
