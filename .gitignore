@@ -1,7 +1,7 @@
 node_modules
 
-# API keys
+# Secrets
 .env
 
-# Sass cache rebuild
+# Sass cache 
 .sass-cache

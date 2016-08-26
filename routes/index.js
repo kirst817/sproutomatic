@@ -1,3 +1,4 @@
+require('dotenv').config()
 var express = require('express');
 var router = express.Router();
 
@@ -22,7 +23,6 @@ router.post('/users/signup', function(req, res, next) {
  //valid.register
 
   var user = req.body.user;
-  // var username = user.username;
   var email = user.email;
   var password = bcrypt.hashSync(user.password, 10);
 
@@ -53,9 +53,10 @@ router.post('/users/signup', function(req, res, next) {
 });
 
 router.post('/users/login', function(req, res, next) {
+  //router.post
   //valid.login
 
-  // const user = req.body.user;
+    var user = req.body.user;
     var email = user.email;
     var password = user.password;
     knex('users')
