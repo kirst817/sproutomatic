@@ -1,4 +1,4 @@
-//signup - see notes - need factory
+//signup - see notes 
 app.directive('pdSignup', signupDirective);
 
 function signupDirective(){
