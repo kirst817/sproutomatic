@@ -38,7 +38,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     })
     .state('dashboard', {
       url: '/dashboard',
-      templateUrl: 'views/dashboard.html'
+      template: '<pd-dash></pd-dash>'
       // controller: 'DashboardCtrl',
       // resolve: { loginRequired: loginRequired }
     })
