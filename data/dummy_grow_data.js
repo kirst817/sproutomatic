@@ -919,3 +919,4 @@ var data = {
     // timestamp: "2016-08-29T02:34:25.895Z"
 }]
 };
+module.exports = {data: data};

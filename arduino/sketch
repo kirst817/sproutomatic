@@ -1,0 +1,235 @@
+#include <SPI.h> // Required to use Ethernet
+#include <Ethernet.h> // The Ethernet library includes the client
+//#include <Progmem.h> // Allows us to sacrifice flash for DRAM
+///////////////////////
+// Ethernet Settings //
+///////////////////////
+// Enter a MAC address for your controller below.
+byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
+// if you don't want to use DNS (and reduce your sketch size)
+// use the numeric IP instead of the name for the server:
+IPAddress server(54,86,132,254);  // numeric IP for data.sparkfun.com
+//char server[] = "data.sparkfun.com";    // name address for data.sparkFun (using DNS)
+// Set the static IP address to use if the DHCP fails to assign
+IPAddress ip(192,168,0,5);
+
+// Initialize the Ethernet client library
+// with the IP address and port of the server
+// that you want to connect to (port 80 is default for HTTP):
+EthernetClient client;
+
+//garden
+#include "DHT.h"
+
+#define DHTPIN 2     // what digital pin we're connected to
+#define MoiAPIN A3
+#define MoiDPIN 3
+#define triggerPin 4
+#define switchPin 5
+#define lightPin 6
+String name = "Ether-anon";
+boolean newName = true;
+
+// Uncomment whatever type you're using!
+#define DHTTYPE DHT11   // DHT 11
+//#define DHTTYPE DHT22   // DHT 22  (AM2302), AM2321
+//#define DHTTYPE DHT21   // DHT 21 (AM2301)
+
+const String publicKey = "NJXGOwpYV3SmAoGZMvWa";
+const String privateKey = "5d59ZBWAvNF50kVKDXZ7";
+const byte NUM_FIELDS = 4;
+const String fieldNames[NUM_FIELDS] = {"analogmoisture", "digmoisture", "humidity", "temperature"};
+String fieldData[NUM_FIELDS];
+
+
+
+// Initialize DHT sensor.
+// Note that older versions of this library took an optional third parameter to
+// tweak the timings for faster processors.  This parameter is no longer needed
+// as the current DHT reading algorithm adjusts itself to work on faster procs.
+DHT dht(DHTPIN, DHTTYPE);
+long now = 0;
+
+void setup()
+{
+  Serial.begin(115200);
+
+  // Setup Input Pins:
+  pinMode(triggerPin, INPUT_PULLUP);
+  pinMode(switchPin, INPUT_PULLUP);
+  pinMode(lightPin, INPUT_PULLUP);
+  now = millis();
+
+  // Set Up Ethernet:
+  setupEthernet();
+  Serial.println("DHTxx test!");
+  Serial.println(F("=========== Ready to Stream ==========="));
+
+
+  pinMode(MoiAPIN, INPUT); //analog moisture pin location - setting up pin as input
+  pinMode(MoiDPIN, INPUT); //digital moisture pin loaction
+  dht.begin();
+}
+
+void loop()
+
+{
+
+  bool digMoist = digitalRead(MoiDPIN);
+  int analogMoist = analogRead(MoiAPIN);
+  long wait = 5000;
+  //600000
+
+  // Reading temperature or humidity takes about 250 milliseconds!
+  // Sensor readings may also be up to 2 seconds 'old' (its a very slow sensor)
+  float h = dht.readHumidity();
+  // Read temperature as Celsius (the default)
+  float t = dht.readTemperature();
+  // Read temperature as Fahrenheit (isFahrenheit = true)
+  float f = dht.readTemperature(true);
+  if (millis() > now + wait)
+  {
+    // Gather data:
+    fieldData[0] = String(analogMoist);
+    fieldData[1] = String(digMoist);
+    fieldData[2] = String(h);
+    fieldData[3] = String(f);
+
+    Serial.println("Posting!");
+    postData(); // the postData() function does all the work,
+                // check it out below.
+    now = millis();
+    delay(1000);
+  }
+
+  // Check for a new name input:
+  if (Serial.available())
+  {
+    char c = Serial.read();
+    if (c == '!')
+    {
+      newName = true;
+      Serial.print("Your name is ");
+      Serial.println(name);
+    }
+    else if (newName)
+    {
+      newName = false;
+      name = "";
+      name += c;
+    }
+    else
+    {
+      name += c;
+    }
+  }
+
+
+   delay(2000);
+
+
+
+  // Check if any reads failed and exit early (to try again).
+  if (isnan(h) || isnan(t) || isnan(f)) {
+    Serial.println("Failed to read from DHT sensor!");
+    return;
+
+  }
+  String digState;
+  if (digMoist == 0) {
+    digState = "Wet";
+  } else {
+    digState = "Dry";
+  }
+
+  String analogState;
+  if (analogMoist < 600 & analogMoist > 400 ) {
+    analogState = "adequate";
+  }
+   if (analogMoist < 400 & analogMoist > 200 ) {
+    analogState = "drenched";
+  }
+   if (analogMoist > 600 & analogMoist < 800 ) {
+    analogState = "dry soil";
+  }
+   if (analogMoist < 1000 & analogMoist > 800 ) {
+    analogState = "parched";
+  }
+
+
+  Serial.print("Humidity: ");
+  Serial.print(h);
+  Serial.print(" %\t");
+  Serial.print("Temperature: ");
+  Serial.print(t);
+  Serial.print(" *C ");
+  Serial.print(f);
+  Serial.print(" *F\t");
+  Serial.print("Moisture State: ");
+  Serial.println(digState);
+  Serial.print("Moisture Level: ");
+  Serial.println(analogState);
+}
+
+
+void postData()
+{
+  // Make a TCP connection to remote host
+  if (client.connect(server, 80))
+  {
+    // Post the data! Request should look a little something like:
+    // GET /input/publicKey?private_key=privateKey&light=1024&switch=0&name=Jim HTTP/1.1\n
+    // Host: data.sparkfun.com\n
+    // Connection: close\n
+    // \n
+    client.print("GET /input/");
+    client.print(publicKey);
+    client.print("?private_key=");
+    client.print(privateKey);
+    for (int i=0; i<NUM_FIELDS; i++)
+    {
+      client.print("&");
+      client.print(fieldNames[i]);
+      client.print("=");
+      client.print(fieldData[i]);
+    }
+    client.println(" HTTP/1.1");
+    client.print("Host: ");
+    client.println(server);
+    client.println("Connection: close");
+    client.println();
+  }
+  else
+  {
+    Serial.println(F("Connection failed"));
+  }
+
+  // Check for a response from the server, and route it
+  // out the serial port.
+  while (client.connected())
+  {
+    if ( client.available() )
+    {
+      char c = client.read();
+      Serial.print(c);
+    }
+  }
+  Serial.println();
+  client.stop();
+}
+
+void setupEthernet()
+{
+  Serial.println("Setting up Ethernet...");
+  // start the Ethernet connection:
+  if (Ethernet.begin(mac) == 0) {
+    Serial.println(F("Failed to configure Ethernet using DHCP"));
+    // no point in carrying on, so do nothing forevermore:
+    // try to congifure using IP address instead of DHCP:
+    Ethernet.begin(mac, ip);
+  }
+  Serial.print("My IP address: ");
+  Serial.println(Ethernet.localIP());
+  // give the Ethernet shield a second to initialize:
+  delay(1000);
+}
