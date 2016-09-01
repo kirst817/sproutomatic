@@ -12,11 +12,19 @@ function dashDirective(){
   }
 }
 
-controller.$inject = ['userFactory', '$state'];
+controller.$inject = ['userFactory', '$scope', '$http', '$state'];
 //growDataRetrieval
 
-function controller(userFactory, $state) {
+function controller(userFactory, $scope, $http, $state) {
         var dashboard = this;
+
+
+        $http.get('/api2').then(function(growData){
+          console.log('api2 on frontend!');
+          dashboard.grow = growData.data.data.growData;
+
+       })
+
 
 
     }
