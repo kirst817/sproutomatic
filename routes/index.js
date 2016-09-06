@@ -73,36 +73,36 @@ router.get('/api', function(req, res, next) {
 //API2 --------------------------------------------------------------------
 //PLANT DATA from sparkfun ------------------
 //uncomment when hooked up!!!
-router.get('/api2', function(req, res, next) {
-
-  console.log("api2 reached, request is next");
-  request('https://data.sparkfun.com/output/NJXGOwpYV3SmAoGZMvWa.json', function (error, response, body) {
-     objectBody = JSON.parse(body, function(k, v) {
-    return (typeof v === "object" || isNaN(v)) ? v : parseInt(v, 10);
-});
-
-//check for repeat data
-    knex('plantsensordata')
-    .insert(objectBody)
-    .then( function (result) {
-      console.log(result);
-    })
-     console.log(objectBody);
-
-    if (!error && response.statusCode == 200) {
-      res.json(body);
-    }
-  })
-});
+// router.get('/api2', function(req, res, next) {
+//
+//   console.log("api2 reached, request is next");
+//   request('https://data.sparkfun.com/output/NJXGOwpYV3SmAoGZMvWa.json', function (error, response, body) {
+//      objectBody = JSON.parse(body, function(k, v) {
+//     return (typeof v === "object" || isNaN(v)) ? v : parseInt(v, 10);
+// });
+//
+// //check for repeat data
+//     knex('plantsensordata')
+//     .insert(objectBody)
+//     .then( function (result) {
+//       console.log(result);
+//     })
+//      console.log(objectBody);
+//
+//     if (!error && response.statusCode == 200) {
+//       res.json(body);
+//     }
+//   })
+// });
 
 
 //DUMMY grow data ---------------------
 
-// router.get('/api2', function(req, res, next){
-//seeded if needed in database
-//   console.log('api 2222 accessed');
-//   res.json(dummydata);
-// });
+router.get('/dummyapi2', function(req, res, next){
+// seeded if needed in database
+  console.log('api 2222 accessed');
+  res.json(dummydata);
+});
 
 
 

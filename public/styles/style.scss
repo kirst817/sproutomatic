@@ -54,10 +54,16 @@ ul {  float: right;
 
 //DASHBOARD
 #dashSideBar {
-  display: inline-block;
-  float: left;
+ display: inline-block;
+ float: left;
+ padding-right: none; 
 }
 #mainDash{
   display: inline-block;
-  float: left;
+  float: right;
+}
+.stoplightbox {
+  border: 1px solid black;
+  width:150px;
+  height: 150px;
 }

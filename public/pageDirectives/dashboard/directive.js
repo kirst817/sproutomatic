@@ -19,12 +19,18 @@ function controller(userFactory, $scope, $http, $state) {
         var dashboard = this;
 
 
-        $http.get('/api2').then(function(growData){
+        $http.get('/dummyapi2').then(function(growData){
           console.log('api2 on frontend!');
+         dashboard.myNumber = 8;
           dashboard.grow = growData.data.data.growData;
 
        })
 
+       $http.get('/api').then(function(plants){
+         //grabs plant grow data from json file
+         console.log(plants);
+         dashboard.plants = plants.data.data.plants;
+      })
 
 
     }
