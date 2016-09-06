@@ -8,77 +8,115 @@ var jwt = require('jsonwebtoken');
 var request = require('request');
 
 var plants = require('../data/plant_data');
-var growdata = require('../data/dummy_grow_data');
+var dummydata = require('../data/dummy_grow_data');
 
-//plant grow maintenence levels
+// function insertData(data){
+//   data.map(e => {
+//     knex('growdata')
+//     .insert(e)
+//     .then(data => {
+//       console.log(data);
+//     })
+//   })
+//     // knex('growdata')
+//     // .insert(data)
+//     // .then(data => {
+//     //   console.log(data);
+//     // })
+// }
 
-function plantData() {
-    return knex('plantData');
+
+
+function plantSensorData() {
+    return knex('plantsensordata');
 }
 
 function plants() {
     return knex('plants');
 }
 
+//API 1 ---------------------------------------------
 router.get('/api', function(req, res, next) {
     console.log("api route accessed");
     //gets the plant js file and returns as json file
+    //data inserted into db as seed
 
     // plants()
     res.json(plants);
 });
 
-//dummy grow data
-//original ------
-router.get('/api2', function(req, res, next) {
-  console.log("api2 route accessed");
-  res.json(growdata);
-});
-//-------original ------
+router.get()
 
-// router.get('/api2', function(req, res, next) {
-//     console.log("api2 route accessed");
-//     plantData()
-//         .where('logged_at', date)
-//         .first()
-//         .then(function(peak) {
-//             if (growdata) {
-//                 res.json(growdata)
-//             } else {
-//                 request('https://data.sparkfun.com/output/NJXGOwpYV3SmAoGZMvWa.json', function(error, response, body) {
-//                     if (!error && response.statusCode == 200) {
-//                         var growdata = {};
-//                         // growdata.logged_at = date;
-//                         // growdata.sunlight = sunlight;
-//                         growdata.moisture = analogmoisture;
-//                         growdata.temperature = temperature;
-//                         growdata.humidity = humidity;
-//                         for (var i = 0; i < growdata.length; i++) {
-//                             plantData()
-//                               .insert(growdata)
-//                               .then(function() {
-//                                     res.json(growdata);
-//                                 })
-//                         }
-//                     }
-//                 })
-//             }
-//         })
+// router.post('/api2', function(req, res, next) {
+// //   // send request to sparkfun api
+// //   // then knex(plantsensordata) insert results from sparkfun
+// //   // then send data to front end
+// //
+//   request('https://data.sparkfun.com/output/NJXGOwpYV3SmAoGZMvWa.json', function(error, response, body) {
+//     body.forEach(function(e){
+//       knex('plantsensordata')
+//       .insert(e)
+//       .returning('id')
+//       .then( function (result) {
+//      console.log(result);
+//      res.json(result)
+//       })
+//     })
+//  })
+// });
+
+// router.post('/api2', function(req, res, next) {
+//   body.forEach(function(e){
+//    knex('plantsensordata')
+//     .insert(e)
+//     .then( function (body) {
+//       console.log(body);
+//       res.json(dummydata)
+//       })
+//   })
+// })
+
+// router.get('/api2', function(req, res, next){
+//   console.log('api 2222 accessed');
+//   res.json(dummydata);
 // });
 
 
-//PLANT DATA from sparkfun
+
+//API2 --------------------------------------------------------------------
+//PLANT DATA from sparkfun ------------------
 //uncomment when hooked up!!!
 // router.get('/api2', function(req, res, next) {
 //
 //   console.log("api2 reached, request is next");
 //   request('https://data.sparkfun.com/output/NJXGOwpYV3SmAoGZMvWa.json', function (error, response, body) {
 //     if (!error && response.statusCode == 200) {
-
 //       res.json(body);
 //     }
 //   })
 // });
+
+
+//DUMMY grow data ---------------------
+// router.post('/api2', function(req, res, next) {
+
+//   console.log("api2 data posted");
+//   knex('plantsensordata').insert({
+//     analogmoisture: analogmoisture,
+//     digmoisture: digmoisture,
+//     temperature: temperature,
+//     humidity: humidity,
+//     timestamp: timestamp
+//   })
+//      .returning('id');
+//     .then( function (result) {
+//       console.log(result);
+//         //res.json({ success: true, message: 'ok' });     // respond back to request
+      //res.json(dummydata);
+//      })
+//
+// });
+
 
 
 module.exports = router;

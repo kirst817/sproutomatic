@@ -1,15 +1,16 @@
 
 exports.up = function(knex, Promise) {
-  return knex.schema.createTable('plantData', function(table) {
-  table.increments().primary();
-  table.timestamp('logged_at').defaultTo(knex.raw('now()')).notNullable();
-  table.integer('sunlight').notNullable();
-  table.integer('moisture').notNullable();
-  table.integer('temperature').notNullable();
-  table.integer('humidity').notNullable();
+  return knex.schema.createTable('plantsensordata', function(table) {
+  table.increments();
+  // table.integer('sunlight').notNullable();
+  table.integer('analogmoisture').notNullable();
+  table.integer('digmoisture').notNullable();
+  table.double('humidity').notNullable();
+  table.double('temperature').notNullable();
+  table.timestamp('timestamp').notNullable();
 })
 };
 
 exports.down = function(knex, Promise) {
-  return knex.schema.dropTable('plantData');
+  return knex.schema.dropTable('plantsensordata');
 };

@@ -8,7 +8,7 @@ app.controller('gardenCtrl', function($scope, $http){
   })
    $http.get('/api2').then(function(growData){
      // grabs grow monitor data from router.get api request (index.js)
-    //  console.log(growData);
+     console.log('grow data', growData);
      $scope.view.grow = growData.data;
   })
 
