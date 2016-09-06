@@ -12,14 +12,14 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
       templateUrl: 'views/our-product.html'
       // controller: 'ProductCtrl'
     })
-    .state('company', {
-      url: '/the-company',
-      templateUrl: 'views/the-company.html'
-    })
-    .state('solve', {
-      url: '/we-solve',
-      templateUrl: '/views/we-solve.html'
-    })
+    // .state('company', {
+    //   url: '/the-company',
+    //   templateUrl: 'views/the-company.html'
+    // })
+    // .state('solve', {
+    //   url: '/we-solve',
+    //   templateUrl: '/views/we-solve.html'
+    // })
     .state('login', {
     url: '/login',
     template: '<pd-login></pd-login>'
