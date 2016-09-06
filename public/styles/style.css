@@ -37,12 +37,13 @@ ul {
   text-align: center; }
 
 #dashSideBar {
-  display: inline-block;
+  display: inline;
   float: left;
-  padding-right: none; }
+  padding-right: none;
+  padding-top: 10%; }
 
 #mainDash {
-  display: inline-block;
+  display: inline;
   float: right; }
 
 .stoplightbox {

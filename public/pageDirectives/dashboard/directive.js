@@ -32,5 +32,11 @@ function controller(userFactory, $scope, $http, $state) {
          dashboard.plants = plants.data.data.plants;
       })
 
+       $http.get('/dashboard').then(function(join){
+         //grabs plant grow data from json file
+         console.log(join);
+        //  dashboard.joinInfo = join.data.data.plants;
+      })
+
 
     }

@@ -40,30 +40,31 @@ router.get('/api', function(req, res, next) {
     console.log("api route accessed");
     //gets the plant js file and returns as json file
     //data inserted into db as seed
-
-    // plants()
     res.json(plants);
 });
-
 
 
 // router.get('/dashboard', function(req, res, next) {
 // //   // access plant growing conditions and plant sensor data based on veggie in garen
 // //   // compare levels
 // //   // then send data to front end
-// /
+//
 //          knex
-//           .select('plants.name', '')
+//           .select('name', 'sunlight')
 //           .from('plants')
 //           .leftOuterJoin('plantsensordata', function () {
-//           .where(plantsensordata.analogmoisture >= waterRequirementsMax OR plantsensordata.analogmoisture <= waterRequirementsMin)
+//            this
+//            .where('name = Basil')
+//           //, 'plantsensordata.sunlight <= sunExposureMin'
+//           // 'plantsensordata.sunlight <= sunExposureMin'
 //           .then( function (result) {
 //             console.log(result);
 //         })
-//         if (!error && response.statusCode == 200) {
-//           res.json(result);
-//         }
-// })
+//         // if (!error && response.statusCode == 200) {
+//         //   res.json(result);
+//         // }
+//       })
+// });
 
 
 
@@ -73,35 +74,35 @@ router.get('/api', function(req, res, next) {
 //API2 --------------------------------------------------------------------
 //PLANT DATA from sparkfun ------------------
 //uncomment when hooked up!!!
-// router.get('/api2', function(req, res, next) {
-//
-//   console.log("api2 reached, request is next");
-//   request('https://data.sparkfun.com/output/NJXGOwpYV3SmAoGZMvWa.json', function (error, response, body) {
-//      objectBody = JSON.parse(body, function(k, v) {
-//     return (typeof v === "object" || isNaN(v)) ? v : parseInt(v, 10);
-// });
-//
-// //check for repeat data
-//     knex('plantsensordata')
-//     .insert(objectBody)
-//     .then( function (result) {
-//       console.log(result);
-//     })
-//      console.log(objectBody);
-//
-//     if (!error && response.statusCode == 200) {
-//       res.json(body);
-//     }
-//   })
-// });
+router.get('/api2', function(req, res, next) {
+
+    console.log("api2 reached, request is next");
+    request('https://data.sparkfun.com/output/NJXGOwpYV3SmAoGZMvWa.json', function(error, response, body) {
+        objectBody = JSON.parse(body, function(k, v) {
+            return (typeof v === "object" || isNaN(v)) ? v : parseInt(v, 10);
+        });
+
+        //check for repeat data
+        knex('plantsensordata')
+            .insert(objectBody)
+            .then(function(result) {
+                console.log(result);
+            })
+        console.log(objectBody);
+
+        if (!error && response.statusCode == 200) {
+            res.json(body);
+        }
+    })
+});
 
 
 //DUMMY grow data ---------------------
 
-router.get('/dummyapi2', function(req, res, next){
-// seeded if needed in database
-  console.log('api 2222 accessed');
-  res.json(dummydata);
+router.get('/dummyapi2', function(req, res, next) {
+    // seeded if needed in database
+    console.log('api 2222 accessed');
+    res.json(dummydata);
 });
 
 

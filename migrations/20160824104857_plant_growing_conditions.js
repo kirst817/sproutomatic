@@ -3,14 +3,14 @@ exports.up = function(knex, Promise) {
   return knex.schema.createTable('plants', function(table) {
   table.increments();
   table.string('name').notNullable().unique();
-  table.string('waterRequirementsMax').notNullable();
-  table.string('waterRequirementsMin').notNullable();
-  table.string('tempRangeMax').notNullable();
-  table.string('tempRangeMin').notNullable();
-  table.string('humidityMax').notNullable();
-  table.string('humidityMin').notNullable();
-  // table.string('sunExposureMax').notNullable();
-  // table.string('sunExposureMin').notNullable();
+  table.integer('sunExposureMax').notNullable();
+  table.integer('sunExposureMin').notNullable();
+  table.integer('waterRequirementsMax').notNullable();
+  table.integer('waterRequirementsMin').notNullable();
+  table.integer('tempRangeMax').notNullable();
+  table.integer('tempRangeMin').notNullable();
+  table.integer('humidityMax').notNullable();
+  table.integer('humidityMin').notNullable();
 })
 };
 

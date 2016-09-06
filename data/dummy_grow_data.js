@@ -245,27 +245,6 @@ var data = {
     sunlight: 500,
     timestamp: "2016-08-29T02:48:15.473Z"
 }, {
-    analogmoisture: 513,
-    digmoisture: 1,
-    humidity: 49.00,
-    temperature: 69.80,
-    sunlight: 500,
-    timestamp: "2016-08-29T02:48:08.345Z"
-}, {
-    analogmoisture: 512,
-    digmoisture: 1,
-    humidity: 49.00,
-    temperature: 69.80,
-    sunlight: 500,
-    timestamp: "2016-08-29T02:48:01.769Z"
-}, {
-    analogmoisture: 512,
-    digmoisture: 1,
-    humidity: 49.00,
-    temperature: 69.80,
-    sunlight: 500,
-    timestamp: "2016-08-29T02:47:55.328Z"
-}, {
     analogmoisture: 512,
     digmoisture: 1,
     humidity: 49.00,
@@ -496,91 +475,6 @@ var data = {
     temperature: 68.00,
     sunlight: 300,
     timestamp: "2016-08-29T02:43:51.575Z"
-}, {
-    analogmoisture: 496,
-    digmoisture: 1,
-    humidity: 54.00,
-    temperature: 68.00,
-    sunlight: 300,
-    timestamp: "2016-08-29T02:43:44.167Z"
-}, {
-    analogmoisture: 494,
-    digmoisture: 1,
-    humidity: 55.00,
-    temperature: 68.00,
-    sunlight: 400,
-    timestamp: "2016-08-29T02:43:38.017Z"
-}, {
-    analogmoisture: 493,
-    digmoisture: 1,
-    humidity: 56.00,
-    temperature: 68.00,
-    sunlight: 400,
-    timestamp: "2016-08-29T02:43:32.023Z"
-}, {
-    analogmoisture: 492,
-    digmoisture: 1,
-    humidity: 56.00,
-    temperature: 68.00,
-    sunlight: 400,
-    timestamp: "2016-08-29T02:43:24.952Z"
-}, {
-    analogmoisture: 491,
-    digmoisture: 1,
-    humidity: 56.00,
-    temperature: 68.00,
-    sunlight: 400,
-    timestamp: "2016-08-29T02:43:16.705Z"
-}, {
-    analogmoisture: 490,
-    digmoisture: 1,
-    humidity: 57.00,
-    temperature: 68.00,
-    sunlight: 300,
-    timestamp: "2016-08-29T02:43:08.639Z"
-}, {
-    analogmoisture: 489,
-    digmoisture: 1,
-    humidity: 57.00,
-    temperature: 68.00,
-    sunlight: 300,
-    timestamp: "2016-08-29T02:43:01.984Z"
-}, {
-    analogmoisture: 489,
-    digmoisture: 1,
-    humidity: 57.00,
-    temperature: 68.00,
-    sunlight: 400,
-    timestamp: "2016-08-29T02:42:55.697Z"
-}, {
-    analogmoisture: 488,
-    digmoisture: 1,
-    humidity: 57.00,
-    temperature: 68.00,
-    sunlight: 300,
-    timestamp: "2016-08-29T02:42:47.580Z"
-    },
- {
-    analogmoisture: 473,
-    digmoisture: 1,
-    humidity: 60.00,
-    temperature: 68.00,
-    sunlight: 300,
-    timestamp: "2016-08-29T02:41:35.323Z"
-}, {
-    analogmoisture: 470,
-    digmoisture: 1,
-    humidity: 61.00,
-    temperature: 68.00,
-    sunlight: 300,
-    timestamp: "2016-08-29T02:41:27.882Z"
-}, {
-    analogmoisture: 468,
-    digmoisture: 1,
-    humidity: 61.00,
-    temperature: 68.00,
-    sunlight: 300,
-    timestamp: "2016-08-29T02:41:20.756Z"
 }, {
     analogmoisture: 622,
     digmoisture: 1,
