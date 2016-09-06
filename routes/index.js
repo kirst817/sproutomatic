@@ -45,7 +45,7 @@ router.get('/api', function(req, res, next) {
     res.json(plants);
 });
 
-router.get()
+// router.get()
 
 // router.post('/api2', function(req, res, next) {
 // //   // send request to sparkfun api
@@ -86,15 +86,25 @@ router.get()
 //API2 --------------------------------------------------------------------
 //PLANT DATA from sparkfun ------------------
 //uncomment when hooked up!!!
-// router.get('/api2', function(req, res, next) {
-//
-//   console.log("api2 reached, request is next");
-//   request('https://data.sparkfun.com/output/NJXGOwpYV3SmAoGZMvWa.json', function (error, response, body) {
-//     if (!error && response.statusCode == 200) {
-//       res.json(body);
-//     }
-//   })
-// });
+router.get('/api2', function(req, res, next) {
+
+  console.log("api2 reached, request is next");
+  request('https://data.sparkfun.com/output/NJXGOwpYV3SmAoGZMvWa.json', function (error, response, body) {
+     objectBody = JSON.parse(body, function(k, v) {
+    return (typeof v === "object" || isNaN(v)) ? v : parseInt(v, 10);
+});
+    knex('plantsensordata')
+    .insert(objectBody)
+    .then( function (result) {
+      console.log(result);
+    })
+     console.log(objectBody);
+
+    if (!error && response.statusCode == 200) {
+      res.json(body);
+    }
+  })
+});
 
 
 //DUMMY grow data ---------------------
