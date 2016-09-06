@@ -45,41 +45,28 @@ router.get('/api', function(req, res, next) {
     res.json(plants);
 });
 
-// router.get()
 
-// router.post('/api2', function(req, res, next) {
-// //   // send request to sparkfun api
-// //   // then knex(plantsensordata) insert results from sparkfun
+
+// router.get('/dashboard', function(req, res, next) {
+// //   // access plant growing conditions and plant sensor data based on veggie in garen
+// //   // compare levels
 // //   // then send data to front end
-// //
-//   request('https://data.sparkfun.com/output/NJXGOwpYV3SmAoGZMvWa.json', function(error, response, body) {
-//     body.forEach(function(e){
-//       knex('plantsensordata')
-//       .insert(e)
-//       .returning('id')
-//       .then( function (result) {
-//      console.log(result);
-//      res.json(result)
-//       })
-//     })
-//  })
-// });
-
-// router.post('/api2', function(req, res, next) {
-//   body.forEach(function(e){
-//    knex('plantsensordata')
-//     .insert(e)
-//     .then( function (body) {
-//       console.log(body);
-//       res.json(dummydata)
-//       })
-//   })
+// /
+//          knex
+//           .select('plants.name', '')
+//           .from('plants')
+//           .leftOuterJoin('plantsensordata', function () {
+//           .where(plantsensordata.analogmoisture >= waterRequirementsMax OR plantsensordata.analogmoisture <= waterRequirementsMin)
+//           .then( function (result) {
+//             console.log(result);
+//         })
+//         if (!error && response.statusCode == 200) {
+//           res.json(result);
+//         }
 // })
 
-// router.get('/api2', function(req, res, next){
-//   console.log('api 2222 accessed');
-//   res.json(dummydata);
-// });
+
+
 
 
 
@@ -93,6 +80,8 @@ router.get('/api2', function(req, res, next) {
      objectBody = JSON.parse(body, function(k, v) {
     return (typeof v === "object" || isNaN(v)) ? v : parseInt(v, 10);
 });
+
+//check for repeat data
     knex('plantsensordata')
     .insert(objectBody)
     .then( function (result) {
@@ -108,23 +97,11 @@ router.get('/api2', function(req, res, next) {
 
 
 //DUMMY grow data ---------------------
-// router.post('/api2', function(req, res, next) {
 
-//   console.log("api2 data posted");
-//   knex('plantsensordata').insert({
-//     analogmoisture: analogmoisture,
-//     digmoisture: digmoisture,
-//     temperature: temperature,
-//     humidity: humidity,
-//     timestamp: timestamp
-//   })
-//      .returning('id');
-//     .then( function (result) {
-//       console.log(result);
-//         //res.json({ success: true, message: 'ok' });     // respond back to request
-      //res.json(dummydata);
-//      })
-//
+// router.get('/api2', function(req, res, next){
+//seeded if needed in database
+//   console.log('api 2222 accessed');
+//   res.json(dummydata);
 // });
 
 

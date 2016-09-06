@@ -7,8 +7,8 @@ exports.seed = function(knex, Promise) {
         // Inserts seed entries
         knex('plants').insert({
           name: 'Basil',
-          // sunExposureMax: ,
-          // sunExposureMin: ,
+          // sunExposureMax: 400,
+          // sunExposureMin: 200,
           waterRequirementsMax: 750,
           waterRequirementsMin: 500,
           tempRangeMax: 50,
@@ -18,8 +18,8 @@ exports.seed = function(knex, Promise) {
         }),
         knex('plants').insert({
           name: 'Celery',
-          // sunExposureMax: ,
-          // sunExposureMin: ,
+          // sunExposureMax: 500,
+          // sunExposureMin: 200,
           waterRequirementsMax: 750,
           waterRequirementsMin: 500,
           tempRangeMax: 80,
@@ -29,8 +29,8 @@ exports.seed = function(knex, Promise) {
         }),
         knex('plants').insert({
           name: 'Chives',
-          // sunExposureMax: ,
-          // sunExposureMin: ,
+          // sunExposureMax: 500,
+          // sunExposureMin: 200,
           waterRequirementsMax: 750,
           waterRequirementsMin: 500,
           tempRangeMax: 80,
