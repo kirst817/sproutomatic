@@ -42,6 +42,14 @@ ul {  float: right;
   }
 }
 
+.soil {
+ padding-top: 3%;
+ padding-top: 3%;
+ img {
+   height: 500px;
+   width: 800px;
+ }
+}
 .overlay {
   background-color: lightgrey;
 }
@@ -106,11 +114,13 @@ font-family: 'Raleway', sans-serif;
   background-color: yellow;
 }
 
-.low:after {
-  content: "Low level!!"
+.low {
+  background-color: red;
+  // content: "Low level!!"
 }
-.toohigh:after {
-  content: "Too high!!"
+.high {
+  background-color: red;
+  // content: "Too high!!"
 }
 
 .table-responsive {
@@ -145,10 +155,12 @@ font-family: 'Raleway', sans-serif;
    }
   }
 }
+
+#sensordatatable {
+   overflow-x: hidden; /*<---*/
+    overflow-y: scroll; /*<---*/
+}
 //GRAPHS
 // (function (ChartJsProvider) {
 //   ChartJsProvider.setOptions({ colors : [ '#803690', '#00ADF9', '#DCDCDC', '#46BFBD', '#FDB45C', '#949FB1', '#4D5360'] });
 // });
-
-// overflow-x: hidden; /*<---*/
-//   overflow-y: scroll; /*<---*/

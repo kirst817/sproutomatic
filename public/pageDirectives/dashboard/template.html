@@ -60,7 +60,7 @@
             <div class="col-xs-6 col-sm-3 placeholder">
               <div class='stoplightbox green'></div>
               <h4>Humidity</h4>
-              <span class="text-muted" ng-class='{low: cdashboard.grow[0].humidity < 40}'>Adequate</span>
+              <span class="text-muted" ng-class='{low: dashboard.grow[0].humidity < 40}'>Adequate</span>
             </div>
           </div>
 
@@ -76,7 +76,7 @@
                   <th>Sunlight</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody id='sensordatatable'>
                 <tr ng-repeat="item in dashboard.grow">
                   <td>{{item.analogmoisture/1000 * 100| number:2}} %</td>
                   <td>{{item.temperature}} °F</td>

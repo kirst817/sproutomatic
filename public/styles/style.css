@@ -30,6 +30,13 @@ ul {
     text-decoration: none;
     font-family: 'Raleway', sans-serif; }
 
+.soil {
+  padding-top: 3%;
+  padding-top: 3%; }
+  .soil img {
+    height: 500px;
+    width: 800px; }
+
 .overlay {
   background-color: lightgrey; }
 
@@ -88,11 +95,11 @@ ul {
 .yellow {
   background-color: yellow; }
 
-.low:after {
-  content: "Low level!!"; }
+.low {
+  background-color: red; }
 
-.toohigh:after {
-  content: "Too high!!"; }
+.high {
+  background-color: red; }
 
 .table-responsive {
   overflow-y: scroll; }
@@ -115,5 +122,11 @@ ul {
     .product-container .herbs img {
       height: 500px;
       width: 700px; }
+
+#sensordatatable {
+  overflow-x: hidden;
+  /*<---*/
+  overflow-y: scroll;
+  /*<---*/ }
 
 /*# sourceMappingURL=style.css.map */
