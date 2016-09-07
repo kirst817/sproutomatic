@@ -64,6 +64,7 @@ font-family: 'Raleway', sans-serif;
   display: inline;
   float: right;
  font-family: 'Raleway', sans-serif;
+
 }
 #veggieChoices {
   background-color: #7AA9DD;
@@ -142,3 +143,6 @@ font-family: 'Raleway', sans-serif;
 // (function (ChartJsProvider) {
 //   ChartJsProvider.setOptions({ colors : [ '#803690', '#00ADF9', '#DCDCDC', '#46BFBD', '#FDB45C', '#949FB1', '#4D5360'] });
 // });
+
+// overflow-x: hidden; /*<---*/
+//   overflow-y: scroll; /*<---*/

@@ -4,8 +4,8 @@ var data = {
       name: 'Basil',
       sunExposure:'full sun',
       waterRequirements: 'average water',
-      //tempRange: '60-80°F',
-      //humidityLevels: '20-50%'
+      // tempRange: '60-80°F',
+      // humidityLevels: '20-50%'
       // spacing: '9-12in.'
       // harvest:
       // compatibleWith: []

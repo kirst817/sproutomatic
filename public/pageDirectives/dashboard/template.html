@@ -1,13 +1,7 @@
 <div class="container-fluid">
   <div class="row">
      <div id='dashSideBar'class="col-sm-3 col-md-2 sidebar">
-       <!-- <label for="vegetables">Choose Veggies to Grow:</label>
-       <select name="vegetables" id=""ng-model='growveg'>
-         <option value="">Basil</option>
-         <option value="">Celery</option>
-         <option value="">Chives</option>
-       </select>
-       <button class='btn btn-default btn-sm'>Add Veggie</button> -->
+
        <div name="veggieChoices" id="veggieChoices" >
            <h4>Choose your veggies: </h4>
            <input class='veggies' type='checkbox' id='basil' value="1" > basil<br>
@@ -36,8 +30,8 @@
         </div>
       </div>
     </div>
-<!--
-   <p>{{dashboard.grow[0].sunlight}}</p>
+
+   <!-- <p>{{dashboard.grow[0].sunlight}}</p>
    <p>{{dashboard.plantinfo[0].name}}</p> -->
         <div id='mainDash'class="col-sm-9 col-md-10 main">
           <h1 class="page-header">Your Dashboard</h1>
@@ -51,22 +45,22 @@
 
                 </div>
               <h4>Temperature</h4>
-              <span class="levels" ng-class='{low: camera.onSale === true, high: camera.onSale === true}'>Something else</span>
+              <span class="levels" ng-class='{low: dashboard.grow[0].temperature < 50, high: dashboard.grow[0].temperature > 90}'>Adequate</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
                 <div class='stoplightbox green'></div>
               <h4>Moisture</h4>
-              <span class="levels" ng-class='{low: camera.onSale === true, high: camera.onSale === true}'>Something else</span>
+              <span class="levels" ng-class='{low: dashboard.grow[0].analogmoisture > 600, high: dashboard.grow[0].analogmoisture < 400}'>Adequate</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
               <div class='stoplightbox green'></div>
               <h4>Sunlight</h4>
-              <span class="text-muted">Something else</span>
+              <span class="text-muted" ng-class='{low: dashboard.grow[0].sunlight > 700, high: dashboard.grow[0].sunlight < 200}'>Adequate</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
               <div class='stoplightbox green'></div>
               <h4>Humidity</h4>
-              <span class="text-muted">Something else</span>
+              <span class="text-muted" ng-class='{low: cdashboard.grow[0].humidity < 40}'>Adequate</span>
             </div>
           </div>
 
@@ -76,7 +70,7 @@
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <th>Moisture</th>
+                  <th>Soil Moisture</th>
                   <th>Temperature</th>
                   <th>Humidity</th>
                   <th>Sunlight</th>
@@ -84,10 +78,10 @@
               </thead>
               <tbody>
                 <tr ng-repeat="item in dashboard.grow">
-                  <td>{{item.analogmoisture}}</td>
-                  <td>{{item.temperature}}</td>
-                  <td>{{item.humidity}}</td>
-                  <td>{{item.sunlight}}</td>
+                  <td>{{item.analogmoisture/1000 * 100| number:2}} %</td>
+                  <td>{{item.temperature}} °F</td>
+                  <td>{{item.humidity}} % </td>
+                  <td>{{(1/5)* (item.sunlight) - 33| number:2}} %</td>
                 </tr>
               </tbody>
             </table>

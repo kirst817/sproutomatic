@@ -14,6 +14,6 @@ controller.$inject = ['userFactory', '$state'];
 
 function controller(userFactory, $state) {
         var product = this;
-
+        console.log('product controller working');
 
     }

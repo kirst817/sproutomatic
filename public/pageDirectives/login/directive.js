@@ -15,18 +15,19 @@ controller.$inject = ['userFactory', '$state'];
 
 function controller(userFactory, $state) {
         var login = this;
+        console.log('logging in controller');
 
-        var authType = $state.current.url;
-        login.authorize = function() {
-            console.log(authType);
-            return userFactory.attemptAuth(authType, login.user)
-                .then(function(response) {
-                  if(response.error){
-                    login.error = response.error;
-                  }else {
-                    $state.go('dashboard', null, { reload: true })
-                  }
-                });
-        };
+        // var authType = $state.current.url;
+        // login.authorize = function() {
+        //     console.log(authType);
+        //     return userFactory.attemptAuth(authType, login.user)
+        //         .then(function(response) {
+        //           if(response.error){
+        //             login.error = response.error;
+        //           }else {
+        //             $state.go('dashboard', null, { reload: true })
+        //           }
+        //         });
+        // };
 
     }

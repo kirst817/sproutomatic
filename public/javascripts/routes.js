@@ -10,7 +10,6 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('product', {
       url: '/our-product',
       template: '<pd-product></pd-product>'
-      // controller: 'ProductCtrl'
     })
     // .state('company', {
     //   url: '/the-company',
@@ -39,7 +38,6 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('dashboard', {
       url: '/dashboard',
       template: '<pd-dash></pd-dash>'
-      // controller: 'DashboardCtrl',
       // resolve: { loginRequired: loginRequired }
     })
     $locationProvider.html5Mode(true);
