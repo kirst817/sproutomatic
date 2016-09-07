@@ -1,3 +1,10 @@
+html {
+  position: relative;
+  min-height: 100%; }
+
+body {
+  margin: 0 0 100px; }
+
 #sproutomatic {
   display: inline-block;
   font-size: 30px;
@@ -28,10 +35,11 @@ ul {
 
 .footer {
   background-color: lightgrey;
-  position: relative;
-  right: 0;
-  bottom: 0;
+  position: absolute;
   left: 0;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
   padding: 1rem;
   font-family: 'Noto Sans', sans-serif;
   text-align: center; }
