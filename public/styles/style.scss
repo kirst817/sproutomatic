@@ -63,8 +63,47 @@ ul {  float: right;
   display: inline;
   float: right;
 }
+#veggieChoices {
+  background-color: #7AA9DD;
+  border-radius: 10px;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 5%;
+  padding-top: 5%;
+}
+.veggieDetails {
+  padding-top: 10%;
+  background-color: #50c878;
+  border-radius: 10px;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 5%;
+  padding-top: 5%;
+}
+
 .stoplightbox {
   border: 1px solid black;
   width:150px;
   height: 150px;
 }
+.green {
+  background-color: #50c878;
+  content: "Adequate Level!!"
+}
+.red {
+  background-color: red;
+}
+.yellow {
+  background-color: yellow;
+}
+
+.low:after {
+  content: "Low level!!"
+}
+.toohigh:after {
+  content: "Too high!!"
+}
+//GRAPHS
+// (function (ChartJsProvider) {
+//   ChartJsProvider.setOptions({ colors : [ '#803690', '#00ADF9', '#DCDCDC', '#46BFBD', '#FDB45C', '#949FB1', '#4D5360'] });
+// });

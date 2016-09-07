@@ -1,1 +1,2 @@
-var app = angular.module('gardenApp', ['ui.router']); 
+var app = angular.module('gardenApp', ['ui.router']);
+//'chart.js'

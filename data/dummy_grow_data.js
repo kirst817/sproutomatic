@@ -300,70 +300,70 @@ var data = {
     temperature: 69.80,
     sunlight: 500,
     timestamp: "2016-08-29T02:47:02.689Z"
-}, {
-    analogmoisture: 508,
-    digmoisture: 1,
-    humidity: 50.00,
-    temperature: 69.80,
-    sunlight: 500,
-    timestamp: "2016-08-29T02:46:55.743Z"
-}, {
-    analogmoisture: 508,
-    digmoisture: 1,
-    humidity: 50.00,
-    temperature: 69.80,
-    sunlight: 500,
-    timestamp: "2016-08-29T02:46:47.482Z"
-}, {
-    analogmoisture: 508,
-    digmoisture: 1,
-    humidity: 50.00,
-    temperature: 69.80,
-    sunlight: 500,
-    timestamp: "2016-08-29T02:46:36.684Z"
-}, {
-    analogmoisture: 507,
-    digmoisture: 1,
-    humidity: 50.00,
-    temperature: 69.80,
-    sunlight: 500,
-    timestamp: "2016-08-29T02:46:29.982Z"
-}, {
-    analogmoisture: 510,
-    digmoisture: 1,
-    humidity: 50.00,
-    temperature: 69.80,
-    sunlight: 500,
-    timestamp: "2016-08-29T02:46:23.289Z"
-}, {
-    analogmoisture: 509,
-    digmoisture: 1,
-    humidity: 50.00,
-    temperature: 69.80,
-    sunlight: 500,
-    timestamp: "2016-08-29T02:46:17.225Z"
-}, {
-    analogmoisture: 508,
-    digmoisture: 1,
-    humidity: 50.00,
-    temperature: 69.80,
-    sunlight: 500,
-    timestamp: "2016-08-29T02:46:08.133Z"
-}, {
-    analogmoisture: 507,
-    digmoisture: 1,
-    humidity: 50.00,
-    temperature: 69.80,
-    sunlight: 500,
-    timestamp: "2016-08-29T02:46:01.992Z"
-}, {
-    analogmoisture: 507,
-    digmoisture: 1,
-    humidity: 51.00,
-    temperature: 69.80,
-    sunlight: 500,
-    timestamp: "2016-08-29T02:45:55.914Z"
-}, {
+// }, {
+//     analogmoisture: 508,
+//     digmoisture: 1,
+//     humidity: 50.00,
+//     temperature: 69.80,
+//     sunlight: 500,
+//     timestamp: "2016-08-29T02:46:55.743Z"
+// }, {
+//     analogmoisture: 508,
+//     digmoisture: 1,
+//     humidity: 50.00,
+//     temperature: 69.80,
+//     sunlight: 500,
+//     timestamp: "2016-08-29T02:46:47.482Z"
+// }, {
+//     analogmoisture: 508,
+//     digmoisture: 1,
+//     humidity: 50.00,
+//     temperature: 69.80,
+//     sunlight: 500,
+//     timestamp: "2016-08-29T02:46:36.684Z"
+// }, {
+//     analogmoisture: 507,
+//     digmoisture: 1,
+//     humidity: 50.00,
+//     temperature: 69.80,
+//     sunlight: 500,
+//     timestamp: "2016-08-29T02:46:29.982Z"
+// }, {
+//     analogmoisture: 510,
+//     digmoisture: 1,
+//     humidity: 50.00,
+//     temperature: 69.80,
+//     sunlight: 500,
+//     timestamp: "2016-08-29T02:46:23.289Z"
+// }, {
+//     analogmoisture: 509,
+//     digmoisture: 1,
+//     humidity: 50.00,
+//     temperature: 69.80,
+//     sunlight: 500,
+//     timestamp: "2016-08-29T02:46:17.225Z"
+// }, {
+//     analogmoisture: 508,
+//     digmoisture: 1,
+//     humidity: 50.00,
+//     temperature: 69.80,
+//     sunlight: 500,
+//     timestamp: "2016-08-29T02:46:08.133Z"
+// }, {
+//     analogmoisture: 507,
+//     digmoisture: 1,
+//     humidity: 50.00,
+//     temperature: 69.80,
+//     sunlight: 500,
+//     timestamp: "2016-08-29T02:46:01.992Z"
+// }, {
+//     analogmoisture: 507,
+//     digmoisture: 1,
+//     humidity: 51.00,
+//     temperature: 69.80,
+//     sunlight: 500,
+//     timestamp: "2016-08-29T02:45:55.914Z"
+ }, {
     analogmoisture: 506,
     digmoisture: 1,
     humidity: 51.00,

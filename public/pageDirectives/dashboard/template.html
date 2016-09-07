@@ -1,15 +1,31 @@
-
 <div class="container-fluid">
   <div class="row">
      <div id='dashSideBar'class="col-sm-3 col-md-2 sidebar">
-       <label for="vegetables">Choose Veggies to Grow:</label>
+       <!-- <label for="vegetables">Choose Veggies to Grow:</label>
        <select name="vegetables" id=""ng-model='growveg'>
          <option value="">Basil</option>
          <option value="">Celery</option>
          <option value="">Chives</option>
        </select>
-       <div>{{growveg}}</div>
-       <label for="growdata">Search grow Data for your plants:</label>
+       <button class='btn btn-default btn-sm'>Add Veggie</button> -->
+       <div name="veggieChoices" id="veggieChoices" >
+           <h4>Choose your veggies: </h4>
+           <input class='veggies' type='checkbox' id='basil' value="1" > basil<br>
+           <input class='veggies'type='checkbox' id='celery' value="2"> celery<br>
+           <input class='veggies' type='checkbox'id='chives' value="3"> chives<br>
+           <input class='veggies'type='checkbox' id='cucumber' value="4"> cucumber<br>
+           <input class='veggies'type='checkbox'id='kale'value="5"> kale<br>
+           <input class='veggies'type='checkbox'id='lettuce' value="6"> lettuce<br>
+           <input class='veggies'type='checkbox' id='pepper' value="7"> pepper<br>
+           <input class='veggies'type='checkbox' id='rosemary' value="8"> rosemary<br>
+           <input class='veggies'type='checkbox' id='sage' value="9"> sage<br>
+           <input class='veggies'type='checkbox' id='spinach' value="10"> spinach<br>
+           <input class='veggies'type='checkbox' id='strawberries' value="11"> strawberries<br>
+           <input class='veggies'type='checkbox' id='tomato' value="12"> tomato<br>
+            <button class='btn btn-default btn-sm' id='vegSubmit'>Submit</button>
+         </div>
+      <div class="veggieDetails">
+       <label for="growdata">Search for plant details:</label>
        <input name='growdata'type="text" ng-model='searchByName'>
        <div ng-repeat="plant in dashboard.plants| filter:searchByName">
        <h2>{{plant.name}}</h2>
@@ -18,34 +34,43 @@
         <!-- <h5>Temperature Range: {{plant.tempRange}}</h3>
         <h5>Humidity Levels: {{plant.humidityLevels}}</h3> -->
         </div>
-
+      </div>
     </div>
-
+<!--
+   <p>{{dashboard.grow[0].sunlight}}</p>
+   <p>{{dashboard.plantinfo[0].name}}</p> -->
         <div id='mainDash'class="col-sm-9 col-md-10 main">
           <h1 class="page-header">Your Dashboard</h1>
           <div class="row placeholders">
             <div class="col-xs-6 col-sm-3 placeholder">
-                <div class='stoplightbox' ng-class='{yellow: camera.onSale === true, red: camera.onSale === true, green: camera.onSale === true, sale: camera.onSale === true}'></div>
+                <div class='stoplightbox green'
+                  ng-class="{red: if(dashboard.plantinfo.name = 'basil' && dashboard.grow[0].sunlight > dashboard.plants.sunExposureMin && dashboard.grow[0].sunlight < dashboard.plants.sunExposureMax, green: dashboard.grow[0].sunlight <= dashboard.plants.sunExposureMax && dashboard.grow[0].sunlight >= dashboard.plants.sunExposureMin}">
+
+                  <!-- toohigh, green: adequate, yellow: low -->
+                  <!-- "{'red': obj.value1 == 'someothervalue' || obj.value2 == 'somethingelse'}" -->
+                <!-- <= dashboard.plants.sunExposureMax || dashboard.grow.sunlight >=  dashboard.plants.sunExposureMin -->
+
+                </div>
               <h4>Temperature</h4>
               <span class="levels" ng-class='{low: camera.onSale === true, high: camera.onSale === true}'>Something else</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-                <div class='stoplightbox'></div>
+                <div class='stoplightbox green'></div>
               <h4>Moisture</h4>
               <span class="levels" ng-class='{low: camera.onSale === true, high: camera.onSale === true}'>Something else</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <div class='stoplightbox'></div>
+              <div class='stoplightbox green'></div>
               <h4>Sunlight</h4>
               <span class="text-muted">Something else</span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
-              <div class='stoplightbox'></div>
+              <div class='stoplightbox green'></div>
               <h4>Humidity</h4>
               <span class="text-muted">Something else</span>
             </div>
           </div>
-          <h2 class="sub-header">Last Week's Data</h2>
+          <h2 class="sub-header">Last Weeks Data</h2>
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>

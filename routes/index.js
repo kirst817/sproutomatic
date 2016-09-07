@@ -10,22 +10,6 @@ var request = require('request');
 var plants = require('../data/plant_data');
 var dummydata = require('../data/dummy_grow_data');
 
-// function insertData(data){
-//   data.map(e => {
-//     knex('growdata')
-//     .insert(e)
-//     .then(data => {
-//       console.log(data);
-//     })
-//   })
-//     // knex('growdata')
-//     // .insert(data)
-//     // .then(data => {
-//     //   console.log(data);
-//     // })
-// }
-
-
 
 function plantSensorData() {
     return knex('plantsensordata');
@@ -43,32 +27,17 @@ router.get('/api', function(req, res, next) {
     res.json(plants);
 });
 
-
-// router.get('/dashboard', function(req, res, next) {
-// //   // access plant growing conditions and plant sensor data based on veggie in garen
-// //   // compare levels
-// //   // then send data to front end
-//
-//          knex
-//           .select('name', 'sunlight')
-//           .from('plants')
-//           .leftOuterJoin('plantsensordata', function () {
-//            this
-//            .where('name = Basil')
-//           //, 'plantsensordata.sunlight <= sunExposureMin'
-//           // 'plantsensordata.sunlight <= sunExposureMin'
-//           .then( function (result) {
-//             console.log(result);
-//         })
-//         // if (!error && response.statusCode == 200) {
-//         //   res.json(result);
-//         // }
-//       })
-// });
-
-
-
-
+router.get('/growinfoapi', function(req, res, next) {
+    knex
+    .select('*')
+    .from('plants')
+    .then(function(plantinfo) {
+        console.log(plantinfo);
+        res.json(plantinfo);
+    })
+    //gets the plant js file and returns as json file
+    //data inserted into db as seed
+});
 
 
 //API2 --------------------------------------------------------------------
@@ -82,6 +51,7 @@ router.get('/api2', function(req, res, next) {
             return (typeof v === "object" || isNaN(v)) ? v : parseInt(v, 10);
         });
 
+        // if(da)
         //check for repeat data
         knex('plantsensordata')
             .insert(objectBody)
