@@ -40,11 +40,13 @@ ul {
   display: inline;
   float: left;
   padding-right: none;
-  padding-top: 10%; }
+  padding-top: 10%;
+  font-family: 'Raleway', sans-serif; }
 
 #mainDash {
   display: inline;
-  float: right; }
+  float: right;
+  font-family: 'Raleway', sans-serif; }
 
 #veggieChoices {
   background-color: #7AA9DD;
@@ -83,5 +85,27 @@ ul {
 
 .toohigh:after {
   content: "Too high!!"; }
+
+.table-responsive {
+  overflow-y: scroll; }
+
+.product-container {
+  text-align: center;
+  font-family: 'Raleway', sans-serif; }
+  .product-container h1 {
+    font-family: "Raleway", sans-serif; }
+  .product-container h2 {
+    font-family: 'Raleway', sans-serif;
+    color: limegreen; }
+  .product-container p {
+    width: 70%;
+    margin: 0 auto;
+    color: #0080ff; }
+  .product-container .herbs {
+    padding-top: 3%;
+    padding-top: 3%; }
+    .product-container .herbs img {
+      height: 500px;
+      width: 700px; }
 
 /*# sourceMappingURL=style.css.map */

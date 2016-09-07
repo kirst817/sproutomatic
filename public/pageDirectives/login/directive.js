@@ -8,7 +8,6 @@ function loginDirective(){
     controller: controller,
     controllerAs: 'login',
     bindToController: true
-    //need the last two ???
   }
 }
 
@@ -25,7 +24,7 @@ function controller(userFactory, $state) {
                   if(response.error){
                     login.error = response.error;
                   }else {
-                    $state.go('home', null, { reload: true })
+                    $state.go('dashboard', null, { reload: true })
                   }
                 });
         };

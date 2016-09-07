@@ -1,5 +1,6 @@
 app.controller('gardenCtrl', function($scope, $http){
-  //  $scope.view = {};
+//
+//    $scope.view = {};
   //
   //  $http.get('/api').then(function(plants){
   //    //grabs plant grow data from json file
@@ -12,21 +13,8 @@ app.controller('gardenCtrl', function($scope, $http){
   //    console.log('grow data', growData);
   //    $scope.view.grow = growData.data;
   // })
-// 
-//   $scope.series = ['Series A', 'Series B'];
 //
-//   $scope.data = [
-//   [{
-//     x: 40,
-//     y: 10,
-//     r: 20
-//   }],
-//   [{
-//     x: 10,
-//     y: 40,
-//     r: 50
-//   }]
-// ];
-});
 
-// });
+
+
+});

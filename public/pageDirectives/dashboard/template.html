@@ -43,8 +43,7 @@
           <h1 class="page-header">Your Dashboard</h1>
           <div class="row placeholders">
             <div class="col-xs-6 col-sm-3 placeholder">
-                <div class='stoplightbox green'
-                  ng-class="{red: if(dashboard.plantinfo.name = 'basil' && dashboard.grow[0].sunlight > dashboard.plants.sunExposureMin && dashboard.grow[0].sunlight < dashboard.plants.sunExposureMax, green: dashboard.grow[0].sunlight <= dashboard.plants.sunExposureMax && dashboard.grow[0].sunlight >= dashboard.plants.sunExposureMin}">
+                <div class='stoplightbox green'>
 
                   <!-- toohigh, green: adequate, yellow: low -->
                   <!-- "{'red': obj.value1 == 'someothervalue' || obj.value2 == 'somethingelse'}" -->
@@ -70,7 +69,9 @@
               <span class="text-muted">Something else</span>
             </div>
           </div>
-          <h2 class="sub-header">Last Weeks Data</h2>
+
+         <h2 class="sub-header">Last Weeks Data</h2>
+
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>

@@ -9,7 +9,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     })
     .state('product', {
       url: '/our-product',
-      templateUrl: 'views/our-product.html'
+      template: '<pd-product></pd-product>'
       // controller: 'ProductCtrl'
     })
     // .state('company', {

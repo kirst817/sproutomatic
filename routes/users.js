@@ -12,17 +12,16 @@ router.post('/users/signup', function(req, res, next) {
 
  //valid.register
 
-  var user = req.body.user;
-  var email = user.email;
+  var email = req.body.email;
   var password = bcrypt.hashSync(user.password, 10);
 
   knex('users')
-    .whereRaw('lower(email) = ?', user.email.toLowerCase())
-    .count()
+    .where({email})
     .first()
     .then(function (result) {
       if (result.count == "0") {
-        knex('users').insert({email, password})
+        knex('users')
+        .insert({email: email, password: password})
         .returning('*')
         .then(function(users){
           var regUser = users[0];
@@ -46,26 +45,25 @@ router.post('/users/login', function(req, res, next) {
   //router.post
   //valid.login
 
-    var user = req.body.user;
-    var email = user.email;
+    var email = req.body.email;
     var password = user.password;
     knex('users')
-      .whereRaw('lower(email) = ?', user.email.toLowerCase())
+      .where({email: email})
       .first()
-      .then(function (result) {
-        if (!result) {
+      .then(function (user) {
+        if (!user) {
           res.status(422).send({
             error: "Invalid email or password"
           })
         }
-        else if(!bcrypt.compareSync(password, result.password)) {
+        else if(!bcrypt.compareSync(password, user.password)) {
             res.status(422).send({ error: 'Invalid email or password' });
         }
         else {
-          var token = jwt.sign({ id: result.id }, process.env.JWT_SECRET )
+          var token = jwt.sign({ id: user.id }, process.env.JWT_SECRET )
 
           res.json({
-            id: result.id,
+            id: user.id,
             email: email,
             token: token
           })
