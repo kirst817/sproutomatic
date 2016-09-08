@@ -76,7 +76,8 @@
                   <th>Sunlight</th>
                 </tr>
               </thead>
-              <tbody id='sensordatatable'>
+              <div id='sensordatatable'>
+              <tbody>
                 <tr ng-repeat="item in dashboard.grow">
                   <td>{{item.analogmoisture/1000 * 100| number:2}} %</td>
                   <td>{{item.temperature}} °F</td>
@@ -84,6 +85,7 @@
                   <td>{{(1/5)* (item.sunlight) - 33| number:2}} %</td>
                 </tr>
               </tbody>
+            </div>
             </table>
           </div>
         </div>

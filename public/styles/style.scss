@@ -20,6 +20,8 @@ ul { float: right;
   li {
     display: inline-block;
     float: left;
+    font-weight: bold;
+    font-size: 15px;
     color: black;
     font-family: 'Raleway', sans-serif;
   }
@@ -42,16 +44,16 @@ ul { float: right;
   font-size: 50px;
   padding-bottom: none;
   color: white;
-
   font-weight: bold;
   padding-top: 5%;
 
   }
   h2 {
     color: black;
+     font-family: 'Raleway', sans-serif;
     font-size: 40px;
     opacity: 1;
-    font-family: 'Baloo Tamma', cursive;
+    // font-family: 'Baloo Tamma', cursive;
     // font-family: 'Sigmar One';
     font-weight: bold;
     padding-top: 2%;
@@ -60,7 +62,7 @@ ul { float: right;
   .getstarted {
     text-decoration: none;
     font-family: 'Raleway', sans-serif;
-    opacity: 1;
+    font-weight: bold;
   }
 }
 
@@ -75,6 +77,7 @@ ul { float: right;
   padding: 1rem;
   font-family: 'Noto Sans', sans-serif;
   text-align: center;
+
 }
 
 //DASHBOARD
@@ -86,9 +89,12 @@ ul { float: right;
 font-family: 'Raleway', sans-serif;
 }
 #mainDash{
+
   display: inline;
   float: right;
  font-family: 'Raleway', sans-serif;
+ height: 80%;
+ overflow-x: scroll;
 
 }
 #veggieChoices {
@@ -135,10 +141,6 @@ font-family: 'Raleway', sans-serif;
   // content: "Too high!!"
 }
 
-.table-responsive {
-  overflow-y: scroll;
-}
-
 .product-container {
   text-align: center;
   font-family: 'Raleway', sans-serif;
@@ -154,10 +156,7 @@ font-family: 'Raleway', sans-serif;
     margin: 0 auto;
     color: #0080ff;
   }
-  // .sensors {
-  //   display: block;
-  //   text-align: center;
-  // }
+
   .herbs {
    padding-top: 3%;
    padding-top: 3%;
