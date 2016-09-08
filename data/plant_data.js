@@ -73,7 +73,7 @@ var data = {
     {
       name: 'Rosemary',
       sunExposure: 'full sun',
-      waterRequirements: 'drought tolera,nt'
+      waterRequirements: 'drought tolerant'
 //      tempRange: '60-80°F',
       //humidityLevels: '20-50%'
       // spacing: '18-24in',
