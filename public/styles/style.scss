@@ -3,9 +3,6 @@
 // font-family: 'Londrina Outline', cursive;
 // font-family: 'Questrial', sans-serif;
 
-// body {
-//   background-image: url(../public/images/potted-herbs.jpg);
-// }
 html {
   position: relative;
    min-height: 100%;
@@ -19,7 +16,7 @@ body {
   text-decoration: none;
   font-family: 'Raleway', sans-serif;
 }
-ul {  float: right;
+ul { float: right;
   li {
     display: inline-block;
     float: left;
@@ -28,31 +25,45 @@ ul {  float: right;
   }
 }
 .main-container {
+  height: 550px;
   text-align: center;
-  h1 {
-    font-family: 'Baloo Tamma', cursive;
+  background-image: url(/images/gardening.jpg);
+
+  // h1 {
+  //   padding-top: 5%;
+  //   font-family: 'Baloo Tamma', cursive;
+  //   color: #fff;
+  //   opacity: 1;
+  // }
+  h1{
+  //font-family: 'Sigmar One';
+
+  font-family: 'Londrina Outline', cursive;
+  font-size: 50px;
+  padding-bottom: none;
+  color: white;
+
+  font-weight: bold;
+  padding-top: 5%;
+
   }
   h2 {
-  font-family: 'Londrina Outline', cursive;
-  color: limegreen;
+    color: black;
+    font-size: 40px;
+    opacity: 1;
+    font-family: 'Baloo Tamma', cursive;
+    // font-family: 'Sigmar One';
+    font-weight: bold;
+    padding-top: 2%;
+    padding-bottom: 3%;
   }
   .getstarted {
     text-decoration: none;
     font-family: 'Raleway', sans-serif;
+    opacity: 1;
   }
 }
 
-.soil {
- padding-top: 3%;
- padding-top: 3%;
- img {
-   height: 500px;
-   width: 800px;
- }
-}
-.overlay {
-  background-color: lightgrey;
-}
 
 .footer {
   background-color: lightgrey;
@@ -112,7 +123,7 @@ font-family: 'Raleway', sans-serif;
   background-color: red;
 }
 .yellow {
-  background-color: yellow;
+  background-color: #ffe135;
 }
 
 .low {
@@ -161,7 +172,3 @@ font-family: 'Raleway', sans-serif;
    overflow-x: hidden; /*<---*/
     overflow-y: scroll; /*<---*/
 }
-//GRAPHS
-// (function (ChartJsProvider) {
-//   ChartJsProvider.setOptions({ colors : [ '#803690', '#00ADF9', '#DCDCDC', '#46BFBD', '#FDB45C', '#949FB1', '#4D5360'] });
-// });
